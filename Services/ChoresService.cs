@@ -16,6 +16,24 @@ public class ChoresService
 
   }
 
+  public Chore GetChoreById(string id)
+  {
+    Chore chore = _db.Chores.Find(c => c.Id == id);
+    if (chore == null)
+    {
+      throw new Exception("Invalid ID");
+    }
+    return chore;
+  }
+
+  public Chore UpdateChore(Chore choreData, string id)
+  {
+    Chore chore = this.GetChoreById(id);
+    chore.Title = choreData.Title;
+    chore.Priority = choreData.Priority;
+    chore.IsComplete = choreData.IsComplete;
+    return chore;
+  }
   public ChoresService(FakeDb db)
   {
     _db = db;
