@@ -14,3 +14,4 @@ global using CodeWorks.Utils;
 global using chores.Repositories;
 global using chores.Services;
 global using chores.Models;
+global using chores.Data;
