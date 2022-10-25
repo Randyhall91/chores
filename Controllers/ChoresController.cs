@@ -59,7 +59,20 @@ public class ChoresController : ControllerBase
       return BadRequest(e.Message);
     }
   }
+  [HttpDelete("{id}")]
+  public ActionResult<Chore> DeleteChore(string id)
+  {
+    try
+    {
+      Chore chore = _cs.DeleteChore(id);
+      return Ok(chore);
+    }
+    catch (System.Exception e)
+    {
 
+      return BadRequest(e.Message);
+    }
+  }
 
 
   public ChoresController(ChoresService cs)

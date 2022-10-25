@@ -38,4 +38,13 @@ public class ChoresService
   {
     _db = db;
   }
+
+  internal Chore DeleteChore(string id)
+  {
+    Chore chore = this.GetChoreById(id);
+    int choreIndex = _db.Chores.FindIndex(c => c.Id == id);
+    _db.Chores.RemoveAt(choreIndex);
+
+    return chore;
+  }
 }
