@@ -35,7 +35,7 @@ public class Startup
     services.AddScoped<AccountService>();
 
     services.AddTransient<ChoresService>();
-    services.AddSingleton<FakeDb>();
+    services.AddTransient<ChoresRepository>();
   }
 
   private void ConfigureCors(IServiceCollection services)
