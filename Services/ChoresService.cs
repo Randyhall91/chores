@@ -34,16 +34,15 @@ public class ChoresService
   //   chore.Title = choreData.Title;
   //   chore.Priority = choreData.Priority;
   //   chore.IsComplete = choreData.IsComplete;
+  //   
   //   return chore;
   // }
 
-  // internal Chore DeleteChore(string id)
-  // {
-  //   Chore chore = this.GetChoreById(id);
-  //   int choreIndex = _choresRepo.Chores.FindIndex(c => c.Id == id);
-  //   _choresRepo.Chores.RemoveAt(choreIndex);
-  //   return chore;
-  // }
+  internal Chore DeleteChore(int id)
+  {
+    _choresRepo.Delete(id);
+    return null;
+  }
   public ChoresService(ChoresRepository choresRepository)
   {
     _choresRepo = choresRepository;

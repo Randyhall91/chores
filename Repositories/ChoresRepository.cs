@@ -25,4 +25,11 @@ public class ChoresRepository
     choreData.Id = _db.ExecuteScalar<string>(sql, choreData);
     return choreData;
   }
+  public Chore Delete(int id)
+  {
+    // TODO this is bad fix tomorrow
+    var sql = $"DELETE FROM chores WHERE id = {id}";
+    _db.Execute(sql, null);
+    return null;
+  }
 }
